@@ -8,6 +8,7 @@ const Home = () => {
                 <title>Capture Academy | Home</title>
             </Helmet>
             <Slider></Slider>
+         
         </div>
     );
 };

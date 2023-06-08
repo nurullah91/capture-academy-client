@@ -1,39 +1,40 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.min.css';
+import SwiperCore, { Autoplay } from 'swiper';
 
-
-// import required modules
-import { Autoplay, Pagination, Navigation } from "swiper";
+SwiperCore.use([Autoplay]);
 
 const Slider = () => {
     return (
-        <div>
-            <Swiper
-                spaceBetween={30}
-                centeredSlides={true}
-                autoplay={{
-                    delay: 500,
-                    disableOnInteraction: false,
-                }}
-                pagination={{
-                    clickable: true,
-                }}
-                navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper"
-            >
-                <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                <SwiperSlide>Slide 5</SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
-                <SwiperSlide>Slide 7</SwiperSlide>
-                <SwiperSlide>Slide 8</SwiperSlide>
-                <SwiperSlide>Slide 9</SwiperSlide>
-            </Swiper>
-        </div>
+        <Swiper
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+            }}
+            pagination={{
+                clickable: true,
+            }}
+            navigation={true}
+            className="mySwiper"
+        >
+            <SwiperSlide>
+                <img src="https://i.ibb.co/DQf41rm/camera-photographic-with-smartphone-devices-generative-ai.jpg" alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+                <img src="https://i.ibb.co/Xp4W6M7/camera-photographic-with-smartphone-devices-generative-ai-4.jpg" alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+                <img src="https://i.ibb.co/XzXTm4S/camera-photographic-with-smartphone-devices-generative-ai-6.jpg" alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+                <img src="https://i.ibb.co/MScvnjg/camera-photographic-with-smartphone-devices-generative-ai-1.jpg" alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+                <img src="https://i.ibb.co/jzHbghF/camera-photographic-with-smartphone-devices-generative-ai.jpg" alt="" />
+            </SwiperSlide>
+        </Swiper>
     );
 };
 

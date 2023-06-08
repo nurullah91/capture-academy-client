@@ -7,12 +7,11 @@ const NavBar = () => {
         <li><Link>Instructors</Link></li>
         <li><Link>Classes</Link></li>
         <li><Link>Dashboard</Link></li>
-        <li><Link>Login</Link></li>
 
     </>
     return (
         <div>
-            <div className="navbar bg-slate-100 shadow-md fixed top-0">
+            <div className="navbar bg-slate-100 shadow-md fixed top-0 z-50 bg-opacity-60">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -36,7 +35,9 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <div>
+                        <Link to='/login' className="btn">Login</Link>
+                    </div>
                 </div>
             </div>
         </div>
