@@ -16,7 +16,7 @@ const Login = () => {
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="hero">
-                    <div className="hero-content flex-col lg:flex-row-reverse">
+                    <div className="hero-content flex-col lg:flex-row">
                         <div className="">
                             <Lottie animationData={loginAnimation} loop={true} />;
                         </div>
@@ -34,9 +34,10 @@ const Login = () => {
                                         <span className="label-text">Password</span>
                                     </label>
                                     <input type="text" placeholder="password" className="input input-bordered" />
-                                    <label className="label">
-                                        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                    </label>
+                                    {/* TODO: add forget password section */}
+                                    {/* <label className="label">
+                                        <Link className="label-text-alt link link-hover">Forgot password?</Link>
+                                    </label> */}
                                 </div>
                                 <div className="form-control mt-6">
                                     <button className="btn btn-primary">Login</button>

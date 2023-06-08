@@ -23,8 +23,9 @@ const NavBar = () => {
                             }
                         </ul>
                     </div>
-                    <div>
+                    <div className="flex items-center">
                         <Link to='/' className="btn btn-ghost normal-case text-xl"><img className="w-full h-full" src="https://i.ibb.co/gWk7nBN/Black-Yellow-White-Modern-Studio-Photo-Logo-1-removebg-preview-1.png" alt="" /></Link>
+                        <h4 className="text-xl font-bold">Capture Academy</h4>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
