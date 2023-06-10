@@ -6,7 +6,8 @@ SwiperCore.use([Autoplay]);
 
 const Slider = () => {
     return (
-        <Swiper
+      <div className="mt-24">
+          <Swiper
             spaceBetween={30}
             centeredSlides={true}
             autoplay={{
@@ -35,6 +36,7 @@ const Slider = () => {
                 <img src="https://i.ibb.co/jzHbghF/camera-photographic-with-smartphone-devices-generative-ai.jpg" alt="" />
             </SwiperSlide>
         </Swiper>
+      </div>
     );
 };
 
