@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-    // Website logo or Website name, Home, Instructors, Classes, Dashboard and User profile picture. The user profile picture and Dashboard 
+    
     const navItem = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/instructors'>Instructors</Link></li>

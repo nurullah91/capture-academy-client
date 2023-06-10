@@ -12,25 +12,32 @@ const Register = () => {
     // password show hide toggle
     const [showPass, setShowPass] = useState(false)
     const { register, handleSubmit, formState: { errors }, watch, reset } = useForm();
-    const {createUser} = useAuth();
+    const { createUser, updateUser } = useAuth();
     const [error, setError] = useState('')
 
 
     const onSubmit = (data) => {
-        console.log(data); 
+        // console.log(data);
 
         createUser(data.email, data.password)
-        .then(result=>{
-            reset();
-            setError("")
-            console.log(result.user);
+            .then(result => {
+                reset();
+                setError("")
+                updateUser(data.name, data.photoURL)
+                    .then(result => console.log(result))
+                    .catch(error => {
+                        console.log(error)
+                        setError(error.message)
+                    })
+                console.log(result.user);
 
-        })
-        .catch(err=>{
-            console.log(err);
-            setError(err.message);
-        })
-        // Reset the form
+            })
+            .catch(err => {
+                console.log(err);
+                setError(err.message);
+            })
+
+
     };
 
     const password = watch('password');
