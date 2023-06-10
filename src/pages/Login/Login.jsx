@@ -13,7 +13,7 @@ const Login = () => {
 
     return (
         <div className='mt-32'>
-
+            <h3 className="text-4xl text-center font-bold">Please Login</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="hero">
                     <div className="hero-content flex-col lg:flex-row">
@@ -40,7 +40,7 @@ const Login = () => {
                                     </label> */}
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="btn btn-primary">Login</button>
+                                    <button className="btn bg-blue-400 border-none shadow-md">Login</button>
                                     <p className='text-center mt-3'>New to Capture Academy? Please <Link to='/register' className='text-blue-600 font-bold'>Register</Link></p>
                                 </div>
                             </div>
