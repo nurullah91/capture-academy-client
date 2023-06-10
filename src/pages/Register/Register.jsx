@@ -1,11 +1,12 @@
 import Lottie from "lottie-react";
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import signUpAnimation from '../../../public/signup-animation.json';
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import SocialLogin from "../../Components/SocialLogin";
 import useAuth from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
@@ -13,7 +14,8 @@ const Register = () => {
     const [showPass, setShowPass] = useState(false)
     const { register, handleSubmit, formState: { errors }, watch, reset } = useForm();
     const { createUser, updateUser } = useAuth();
-    const [error, setError] = useState('')
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
 
     const onSubmit = (data) => {
@@ -24,7 +26,33 @@ const Register = () => {
                 reset();
                 setError("")
                 updateUser(data.name, data.photoURL)
-                    .then(result => console.log(result))
+                    .then( ()=> {
+                        const saveUser = {displayName: data.displayName, email:data.email, photoURL: data.photoURL, role: "Student"}
+                       
+                        fetch(`${import.meta.env.VITE_BASE_URL}/users`, {
+                            method: "POST",
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                        .then( res => res.json())
+                        .then(result=>{
+                            if(result.insertedId) {
+                                // show success seal
+                                Swal.fire(
+                                    'Good job!',
+                                    'You clicked the button!',
+                                    'success'
+                                  )
+
+
+                                reset();
+                                navigate('/')
+                            }
+                        })
+                           
+                    })
                     .catch(error => {
                         console.log(error)
                         setError(error.message)
