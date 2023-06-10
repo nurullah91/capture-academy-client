@@ -16,11 +16,11 @@ const Register = () => {
     const { createUser, updateUser } = useAuth();
     const [error, setError] = useState('');
     const navigate = useNavigate();
-
+const [btnDisable, setBtnDisable] = useState(false);
 
     const onSubmit = (data) => {
         // console.log(data);
-
+        setBtnDisable(true);
         createUser(data.email, data.password)
             .then(result => {
                 reset();
@@ -41,8 +41,8 @@ const Register = () => {
                             if(result.insertedId) {
                                 // show success seal
                                 Swal.fire(
-                                    'Good job!',
-                                    'You clicked the button!',
+                                    'Congratulations!',
+                                    'Your account successfully created!',
                                     'success'
                                   )
 
@@ -162,7 +162,7 @@ const Register = () => {
 
                                 <div className="form-control mt-6">
                                     <p className="text-rose-600 mb-2">{error}</p>
-                                    <button className="btn bg-blue-300 border-none shadow-md">Sign up</button>
+                                    <button disabled={btnDisable} className="btn bg-blue-300 border-none shadow-md">Sign up</button>
 
                                 </div>
                             </form>
