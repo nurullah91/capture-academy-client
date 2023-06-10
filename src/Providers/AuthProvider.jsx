@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 import { app } from '../firebase/firebase.config';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { useEffect } from 'react';
 import axios from 'axios';
 export const AuthContext = createContext(null);
@@ -59,13 +59,19 @@ const AuthProvider = ({ children }) => {
         }
     }, [])
 
+
+    // logOut function
+    const logOut = () =>{
+       return signOut(auth);
+    }
     const authInfo = {
         loading,
         user,
         createUser,
         login,
         googleSignIn,
-        updateUser
+        updateUser,
+        logOut
 
     }
 

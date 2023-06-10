@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
 
 const NavBar = () => {
-    
+    const {user, logOut} = useAuth();
+
+    const handleLogOut = () =>{
+        logOut()
+        .then()
+        .catch(err=>console.log(err))
+    }
     const navItem = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/instructors'>Instructors</Link></li>
@@ -37,7 +44,7 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-end">
                     <div>
-                        <Link to='/login' className="btn">Login</Link>
+                       {user?<button onClick={handleLogOut} className="bg-rose-300 px-4 py-2 rounded-md font-bold shadow-md">LogOut</button>: <Link to='/login' className="bg-rose-300 px-4 py-2 rounded-md font-bold shadow-md">Login</Link>}
                     </div>
                 </div>
             </div>
