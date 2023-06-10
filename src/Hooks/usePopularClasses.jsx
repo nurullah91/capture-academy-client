@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 
 const usePopularClasses = () => {
-const {data: popularClass=[], isLoading, refetch} = useQuery({
+const {data: popularClasses=[], isLoading, refetch} = useQuery({
     queryKey:['popularClasses'],
     queryFn: async()=>{
         const res = await fetch(`${import.meta.env.VITE_BASE_URL}/classes/popular`);
@@ -12,7 +12,7 @@ const {data: popularClass=[], isLoading, refetch} = useQuery({
 })
 
 
-    return [popularClass, isLoading, refetch]
+    return [popularClasses, isLoading, refetch]
 };
 
 export default usePopularClasses;
