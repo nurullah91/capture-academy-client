@@ -5,16 +5,32 @@ import signUpAnimation from '../../../public/signup-animation.json';
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import SocialLogin from "../../Components/SocialLogin";
+import useAuth from "../../Hooks/useAuth";
 
 
 const Register = () => {
     // password show hide toggle
     const [showPass, setShowPass] = useState(false)
     const { register, handleSubmit, formState: { errors }, watch, reset } = useForm();
+    const {createUser} = useAuth();
+    const [error, setError] = useState('')
+
 
     const onSubmit = (data) => {
-        console.log(data); // Replace with your registration logic
-        reset(); // Reset the form
+        console.log(data); 
+
+        createUser(data.email, data.password)
+        .then(result=>{
+            reset();
+            setError("")
+            console.log(result.user);
+
+        })
+        .catch(err=>{
+            console.log(err);
+            setError(err.message);
+        })
+        // Reset the form
     };
 
     const password = watch('password');
@@ -22,15 +38,16 @@ const Register = () => {
     return (
         <div className='mt-32'>
             <h3 className="text-4xl text-center font-bold">Please Sign Up</h3>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="hero">
-                    <div className="hero-content flex-col lg:flex-row">
-                        <div className="text-center lg:text-left">
 
-                            <Lottie animationData={signUpAnimation} loop={true} />;
-                        </div>
-                        <div className="card w-full max-w-sm shadow-xl bg-slate-100">
-                            <div className="card-body">
+            <div className="hero">
+                <div className="hero-content flex-col lg:flex-row">
+                    <div className="text-center lg:text-left">
+
+                        <Lottie animationData={signUpAnimation} loop={true} />;
+                    </div>
+                    <div className="card w-full max-w-sm shadow-xl bg-slate-100">
+                        <div className="card-body">
+                            <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Name</span>
@@ -109,15 +126,20 @@ const Register = () => {
                                 </div>
 
                                 <div className="form-control mt-6">
-                                    <button className="btn bg-blue-400 border-none shadow-md">Sign up</button>
-                                    <SocialLogin></SocialLogin>
-                                    <p className="mt-3">Already Have an Account? Please <Link to='/Login' className='text-blue-600 font-bold'>Login</Link></p>
+                                    <p className="text-rose-600 mb-2">{error}</p>
+                                    <button className="btn bg-blue-300 border-none shadow-md">Sign up</button>
+
                                 </div>
+                            </form>
+                            <div>
+                                <SocialLogin></SocialLogin>
+                                <p className="mt-3">Already Have an Account? Please <Link to='/Login' className='text-blue-600 font-bold'>Login</Link></p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
+
         </div>
     );
 };
