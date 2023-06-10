@@ -3,13 +3,29 @@ import { Link } from 'react-router-dom';
 import Lottie from "lottie-react";
 import loginAnimation from '../../../public/login-animation.json';
 import SocialLogin from '../../Components/SocialLogin';
+import { useState } from 'react';
+import { FaEyeSlash, FaRegEye } from 'react-icons/fa';
+import useAuth from '../../Hooks/useAuth';
 const Login = () => {
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const [error, setError] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
 
+    const { login } = useAuth();
     const onSubmit = (data) => {
-        console.log(data);
-        reset(); // Reset the form
+        login(data.email, data.password)
+            .then(() => {
+                setError('');
+
+                // Reset the form
+                reset();
+            })
+            .catch(err => {
+                setError(err.message)
+               
+            })
+
     };
 
     return (
@@ -28,20 +44,26 @@ const Login = () => {
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="text" {...register('name', { required: true })} placeholder="email" className="input input-bordered" />
-                                    {errors.name && <span>This field is required</span>}
+                                    <input type="text" {...register('email', { required: true })} placeholder="email" className="input input-bordered" />
+                                    {errors.email && <span className="text-rose-600 mt-1 ">email is required</span>}
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="text" placeholder="password" className="input input-bordered" />
+                                    <div className='relative'>
+                                        <input type={showPassword ? 'text' : 'password'} {...register('password', { required: true })} placeholder="password" className="input input-bordered w-full" />
+                                        <span className='absolute right-4 top-4' onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash></FaEyeSlash> : <FaRegEye></FaRegEye>}</span>
+                                    </div>
+                                    {errors.password && <span className="text-rose-600 mt-1 ">Password is required</span>}
+
                                     {/* TODO: add forget password section */}
                                     {/* <label className="label">
                                         <Link className="label-text-alt link link-hover">Forgot password?</Link>
                                     </label> */}
                                 </div>
-                                <button className="btn bg-blue-400 w-full mt-4 border-none shadow-md">Login</button>
+                                <p className="text-rose-600">{error}</p>
+                                <button className="btn bg-blue-300 w-full mt-4 border-none shadow-md">Login</button>
                             </form>
                             <div className="form-control mt-6">
                                 <SocialLogin></SocialLogin>
