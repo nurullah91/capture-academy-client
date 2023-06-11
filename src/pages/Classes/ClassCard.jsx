@@ -15,14 +15,14 @@ const ClassCard = ({ singleClass }) => {
     const [disabled, setDisabled] = useState(false);
 
     const handleSelect = (item) => {
-        setDisabled(true);
+       
         if (user && user.email) {
             const selectedClass = { classId: item._id, name: item.name, image: item.image, email: user.email, price: item.price, status: "pending" };
 
             axios.post(`${import.meta.env.VITE_BASE_URL}/selected-class`, selectedClass)
                 .then(data => {
                     if (data.data.insertedId) {
-
+                        setDisabled(true);
                         Swal.fire({
                             title: `${item.name} is selected for Enroll`,
                             icon: 'success',
