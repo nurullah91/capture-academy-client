@@ -6,6 +6,7 @@ import SocialLogin from '../../Components/SocialLogin';
 import { useState } from 'react';
 import { FaEyeSlash, FaRegEye } from 'react-icons/fa';
 import useAuth from '../../Hooks/useAuth';
+import { Helmet } from 'react-helmet';
 const Login = () => {
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -30,6 +31,9 @@ const Login = () => {
 
     return (
         <div className='mt-32'>
+            <Helmet>
+                <title>Capture Academy | Login</title>
+            </Helmet>
             <h3 className="text-4xl text-center font-bold">Please Login</h3>
 
             <div className="hero">

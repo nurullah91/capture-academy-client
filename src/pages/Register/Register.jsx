@@ -7,6 +7,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import SocialLogin from "../../Components/SocialLogin";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 
 const Register = () => {
@@ -16,7 +17,7 @@ const Register = () => {
     const { createUser, updateUser } = useAuth();
     const [error, setError] = useState('');
     const navigate = useNavigate();
-const [btnDisable, setBtnDisable] = useState(false);
+    const [btnDisable, setBtnDisable] = useState(false);
 
     const onSubmit = (data) => {
         // console.log(data);
@@ -26,9 +27,9 @@ const [btnDisable, setBtnDisable] = useState(false);
                 reset();
                 setError("")
                 updateUser(data.name, data.photoURL)
-                    .then( ()=> {
-                        const saveUser = {displayName: data.displayName, email:data.email, photoURL: data.photoURL, role: "Student"}
-                       
+                    .then(() => {
+                        const saveUser = { displayName: data.displayName, email: data.email, photoURL: data.photoURL, role: "Student" }
+
                         fetch(`${import.meta.env.VITE_BASE_URL}/users`, {
                             method: "POST",
                             headers: {
@@ -36,22 +37,22 @@ const [btnDisable, setBtnDisable] = useState(false);
                             },
                             body: JSON.stringify(saveUser)
                         })
-                        .then( res => res.json())
-                        .then(result=>{
-                            if(result.insertedId) {
-                                // show success seal
-                                Swal.fire(
-                                    'Congratulations!',
-                                    'Your account successfully created!',
-                                    'success'
-                                  )
+                            .then(res => res.json())
+                            .then(result => {
+                                if (result.insertedId) {
+                                    // show success seal
+                                    Swal.fire(
+                                        'Congratulations!',
+                                        'Your account successfully created!',
+                                        'success'
+                                    )
 
 
-                                reset();
-                                navigate('/')
-                            }
-                        })
-                           
+                                    reset();
+                                    navigate('/')
+                                }
+                            })
+
                     })
                     .catch(error => {
                         console.log(error)
@@ -72,6 +73,9 @@ const [btnDisable, setBtnDisable] = useState(false);
 
     return (
         <div className='mt-32'>
+            <Helmet>
+                <title>Capture Academy | Sign UP</title>
+            </Helmet>
             <h3 className="text-4xl text-center font-bold">Please Sign Up</h3>
 
             <div className="hero">

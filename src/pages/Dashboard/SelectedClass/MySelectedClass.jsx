@@ -2,6 +2,7 @@ import useSelected from '../../../Hooks/Student/useSelected';
 import { FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 const MySelectedClass = () => {
 
@@ -42,6 +43,9 @@ const MySelectedClass = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Capture Academy | My Selected Class</title>
+            </Helmet>
             <h3 className='text-4xl text-center font-bold'>Total Payable Amount: {totalPrice}</h3>
 
             <div>

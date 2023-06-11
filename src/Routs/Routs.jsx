@@ -8,6 +8,7 @@ import Register from "../pages/Register/Register";
 import Classes from "../pages/Classes/Classes";
 import Instructors from "../pages/Instructors/instructors";
 import Dashboard from "../pages/Dashboard/Dashboard";
+import Error from "../pages/Error/Error";
 
 
 
@@ -16,6 +17,7 @@ import Dashboard from "../pages/Dashboard/Dashboard";
     {
       path: "/",
       element: <Main></Main>,
+      errorElement:<Error></Error>,
       children:[
         {
           path: '/',
