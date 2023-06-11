@@ -66,7 +66,7 @@ const ClassCard = ({ singleClass }) => {
                     <p className="font-semibold">Available Seats: {singleClass.availableSeats}</p>
                     <p className="text-orange-500 font-bold">price: ${singleClass.price}</p>
                     <div className="card-actions justify-end">
-                        <button onClick={() => handleSelect(singleClass)} disabled={disabled || isAdmin || isInstructor || singleClass.availableSeats === 0} className="btn bg-blue-300 shadow-md border-none">Select to Enroll</button>
+                        <button onClick={() => handleSelect(singleClass)} disabled={disabled || isAdmin || isInstructor || singleClass.availableSeats === 0} className="btn bg-cyan-200 shadow-md border-none">Select to Enroll</button>
                     </div>
                 </div>
             </div>
