@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
+import { FaUser } from "react-icons/fa";
 
 const NavBar = () => {
-    const {user, logOut} = useAuth();
-
-    const handleLogOut = () =>{
+    const { user, logOut } = useAuth();
+    console.log(user);
+    const handleLogOut = () => {
         logOut()
-        .then()
-        .catch(err=>console.log(err))
+            .then()
+            .catch(err => console.log(err))
     }
     const navItem = <>
         <li><Link to='/'>Home</Link></li>
@@ -43,8 +44,15 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div>
-                       {user?<button onClick={handleLogOut} className="bg-rose-300 px-4 py-2 rounded-md font-bold shadow-md">LogOut</button>: <Link to='/login' className="bg-rose-300 px-4 py-2 rounded-md font-bold shadow-md">Login</Link>}
+                    <div className="flex">
+                        {user ? <>
+                            <img src={user.photoURL} alt="" />
+                            <button onClick={handleLogOut} className="bg-rose-300 px-4 py-2 rounded-md font-bold shadow-md">LogOut</button>
+
+                        </> : <>
+                        <FaUser></FaUser>
+                            <Link to='/login' className="bg-rose-300 px-4 py-2 rounded-md font-bold shadow-md">Login</Link>
+                        </>}
                     </div>
                 </div>
             </div>
