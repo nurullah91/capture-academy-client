@@ -1,6 +1,7 @@
-import React from 'react';
 import useSelected from '../../../Hooks/Student/useSelected';
 import { FaTrash } from 'react-icons/fa';
+import Swal from 'sweetalert2';
+import axios from 'axios';
 
 const MySelectedClass = () => {
 
@@ -9,6 +10,34 @@ const MySelectedClass = () => {
     const [selectedClass, refetch] = useSelected();
 
     const totalPrice = selectedClass.reduce((sum, item) => item.price + sum, 0).toFixed(2)
+
+    const handleDelete = id => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                axios.delete(`${import.meta.env.VITE_BASE_URL}/selected-class/${id}`)
+                    .then(data => {
+                        if (data.data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Class has been deleted.',
+                                'success'
+                            )
+                            refetch();
+                        }
+                    })
+
+            }
+        })
+    }
 
 
     return (
@@ -42,7 +71,7 @@ const MySelectedClass = () => {
                                     <td className='text-right'>{item.price}</td>
                                     <td><span className='bg-cyan-200 p-2 font-semibold rounded-md '>{item.status}</span></td>
                                     <th>
-                                        <button className="bg-rose-600 p-3 text-2xl rounded-md text-white"><FaTrash></FaTrash></button>
+                                        <button onClick={() => handleDelete(item._id)} className="bg-rose-600 p-3 text-2xl rounded-md text-white"><FaTrash></FaTrash></button>
                                     </th>
                                 </tr>)
                             }
