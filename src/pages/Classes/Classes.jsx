@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+
 import useClasses from "../../Hooks/useClasses";
+import ClassCard from "./ClassCard";
 
 
 const Classes = () => {
 
   const [classes] = useClasses();
+  
 
   return (
     <div className="my-24">
@@ -14,19 +16,7 @@ const Classes = () => {
 
         {/* show every single card */}
         {
-          classes.map(singleClass => <div key={singleClass._id} className={`card ${singleClass.availableSeats === 0? "bg-rose-300":"bg-slate-100"} shadow-xl`}>
-
-            <figure><img src={singleClass.image} alt="Class Image" /></figure>
-            <div className="card-body">
-              <h2 className="card-title font-bold">{singleClass.name}</h2>
-              <p className="font-semibold">Instructor: {singleClass.instructorName}</p>
-              <p className="font-semibold">Available Seats: {singleClass.availableSeats}</p>
-              <p className="text-orange-500 font-bold">price: ${singleClass.price}</p>
-              <div className="card-actions justify-end">
-               <Link> <button className="btn bg-blue-300 shadow-md border-none">Select to Enroll</button></Link>
-              </div>
-            </div>
-          </div>)
+          classes.map(singleClass =><ClassCard key={singleClass._id} singleClass={singleClass}></ClassCard>)
         }
       </div>
     </div>
