@@ -1,4 +1,4 @@
-import useSelected from '../../../Hooks/Student/useSelected';
+import useSelected from '../../../../Hooks/Student/useSelected';
 import { FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import axios from 'axios';
