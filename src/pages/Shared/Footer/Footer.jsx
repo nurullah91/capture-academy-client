@@ -14,8 +14,8 @@ const Footer = () => {
                         <span className="footer-title">Contact Us</span>
                         <p className="flex items-center"><FaEnvelope className="mr-3"></FaEnvelope> captureacademy@sample.com</p>
 
-                        <p className="flex items-center"><FaPhone className="mr-3"></FaPhone> 0179668991</p>
                         <p className="flex items-center"><FaSearchLocation className="mr-3"></FaSearchLocation> Barishal, Bangladesh</p>
+                        <p className="flex items-center"><FaPhone className="mr-3"></FaPhone> 0179668991</p>
 
                     </div>
                 <div>
