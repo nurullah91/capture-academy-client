@@ -3,6 +3,7 @@ import { FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 const MySelectedClass = () => {
 
@@ -47,6 +48,7 @@ const MySelectedClass = () => {
                 <title>Capture Academy | My Selected Class</title>
             </Helmet>
             <h3 className='text-4xl text-center font-bold'>Total Payable Amount: {totalPrice}</h3>
+          <div className="text-right mx-10 my-5"><Link to='/dashboard/payment' className='bg-orange-500 px-4 py-2 rounded-md font-bold text-white'>Pay Now</Link></div>
 
             <div>
                 <div className="overflow-x-auto">

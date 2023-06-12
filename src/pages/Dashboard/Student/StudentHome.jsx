@@ -4,7 +4,6 @@ import Lottie from "lottie-react";
 
 const StudentHome = () => {
     const {user} = useAuth();
-    console.log(user);
     return (
         <div className="mt-10">
              <h2 className="text-5xl font-bold text-cyan-700 text-center">Welcome {user?.displayName}</h2>

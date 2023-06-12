@@ -30,15 +30,15 @@ const SocialLogin = () => {
                     body: JSON.stringify(saveUser)
                 })
                     .then(res => res.json())
-                    .then( () => {
-                            // show success seal
-                            Swal.fire(
-                                'Success',
-                                'Login Successful!',
-                                'success'
-                            )
-                            navigate(from, {replace:true})
-                      
+                    .then(() => {
+                        // show success seal
+                        Swal.fire(
+                            'Success',
+                            'Login Successful!',
+                            'success'
+                        )
+                        navigate(from, { replace: true })
+
                     })
 
 

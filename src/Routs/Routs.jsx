@@ -23,6 +23,7 @@ import InstructorRouts from "./InstructorRouts";
 import StudentHome from "../pages/Dashboard/Student/StudentHome";
 import InstructorHome from "../pages/Dashboard/Instructor/InstructorHome";
 import AdminHome from "../pages/Dashboard/Admin/AdminHome";
+import Payment from "../pages/Dashboard/Student/SelectedClass/Payment";
 
 
 
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
       {
         path: 'my-enrolled-class',
         element: <PrivetRouts><MyEnrolledClass></MyEnrolledClass></PrivetRouts>
+      },
+      {
+        path: 'payment',
+        element: <PrivetRouts><Payment></Payment></PrivetRouts>
       },
 
       // Admin routs

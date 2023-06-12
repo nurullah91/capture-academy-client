@@ -1,14 +1,55 @@
 import { useForm } from "react-hook-form";
 import useAuth from "../../../../Hooks/useAuth";
+import useSecuredAxios from "../../../../Hooks/useSecuredAxios";
+import Swal from "sweetalert2";
 
 const AddClass = () => {
 
     const { user } = useAuth();
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
+    const imageUploadToken = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN;
+
+    const imageHostingUrl = `https://api.imgbb.com/1/upload?key=${imageUploadToken}`;
+
+    const [securedAxios] = useSecuredAxios();
+
+    
     const onSubmit = (data) => {
+        // creating a new empty form
+        // const formData = new FormData();
+        // formData.append('image', data.image[0]);
 
-        console.log(data);
+        // fetch(imageHostingUrl, {
+        //     method: 'POST',
+        //     body: formData
+        // })
+        //     .then(res => res.json())
+        //     .then(imageResponse => {
+        //         if (imageResponse.success) {
+        //             data.image = imageResponse.data.display_url;
+        //             data.price = parseFloat(data.price);
+        //             data.totalSeats = parseFloat(data.totalSeats);
+        //             data.enrolled = parseFloat(data.enrolled);
+        //             data.availableSeats = parseFloat(data.availableSeats);
+
+        //             securedAxios.post('/class', data)
+        //                 .then(result => {
+        //                     if (result.data.insertedId) {
+        //                        reset();
+        //                         Swal.fire({
+        //                             position: 'top-end',
+        //                             icon: 'success',
+        //                             title: 'Your work has been saved',
+        //                             showConfirmButton: false,
+        //                             timer: 1000
+        //                         })
+        //                     }
+        //                 })
+
+        //         }
+        //     })
+
     }
 
     return (
@@ -61,9 +102,17 @@ const AddClass = () => {
 
                         <div className="form-control w-full hidden">
                             <label className="label">
-                                <span className="label-text">Available seats</span>
+                                <span className="label-text">Enrolled</span>
                             </label>
                             <input type="number" {...register('enrolled', { required: true })} value={0} className="input input-bordered w-full" />
+                        </div>
+
+
+                        <div className="form-control w-full hidden">
+                            <label className="label">
+                                <span className="label-text">status</span>
+                            </label>
+                            <input type="text" {...register('status', { required: true })} value='pending' className="input input-bordered w-full" />
                         </div>
 
                         <div className="form-control w-full">
