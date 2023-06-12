@@ -34,7 +34,7 @@ const MyEnrolledClass = () => {
                                 <th>{index + 1}</th>
                                 <td><ul>
                                     {
-                                        payment.className.map((item, index) => <li key={index}>{item}</li>)
+                                        payment.className?.map((item, index) => <li key={index}>{item}</li>)
                                     }
 
                                 </ul></td>

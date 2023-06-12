@@ -6,7 +6,7 @@ const AdminHome = () => {
 
     return (
         <div>
-            <h2 className="text-5xl font-bold text-center">Welcome {user?.displayName}</h2>
+            <h2 className="text-5xl font-bold text-center mt-10">Welcome {user?.displayName}</h2>
             <div>
             <Lottie className='h-[70vh]' animationData={welcome} loop={true} />;
             </div>

@@ -8,49 +8,33 @@ const AddClass = () => {
     const { user } = useAuth();
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-    const imageUploadToken = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN;
-
-    const imageHostingUrl = `https://api.imgbb.com/1/upload?key=${imageUploadToken}`;
 
     const [securedAxios] = useSecuredAxios();
 
-    
+
     const onSubmit = (data) => {
         // creating a new empty form
-        // const formData = new FormData();
-        // formData.append('image', data.image[0]);
+        console.log(data);
+        data.price = parseFloat(data.price);
+        data.totalSeats = parseFloat(data.totalSeats);
+        data.enrolled = parseFloat(data.enrolled);
+        data.availableSeats = parseFloat(data.availableSeats);
 
-        // fetch(imageHostingUrl, {
-        //     method: 'POST',
-        //     body: formData
-        // })
-        //     .then(res => res.json())
-        //     .then(imageResponse => {
-        //         if (imageResponse.success) {
-        //             data.image = imageResponse.data.display_url;
-        //             data.price = parseFloat(data.price);
-        //             data.totalSeats = parseFloat(data.totalSeats);
-        //             data.enrolled = parseFloat(data.enrolled);
-        //             data.availableSeats = parseFloat(data.availableSeats);
-
-        //             securedAxios.post('/class', data)
-        //                 .then(result => {
-        //                     if (result.data.insertedId) {
-        //                        reset();
-        //                         Swal.fire({
-        //                             position: 'top-end',
-        //                             icon: 'success',
-        //                             title: 'Your work has been saved',
-        //                             showConfirmButton: false,
-        //                             timer: 1000
-        //                         })
-        //                     }
-        //                 })
-
-        //         }
-        //     })
-
+        securedAxios.post('/class', data)
+            .then(result => {
+                if (result.data.insertedId) {
+                    reset();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your class is pending to approve',
+                        showConfirmButton: false,
+                        timer: 1600
+                    })
+                }
+            })
     }
+
 
     return (
         <div>
@@ -124,9 +108,9 @@ const AddClass = () => {
                         </div>
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text">Enter class Image</span>
+                                <span className="label-text">Enter class Image URL</span>
                             </label>
-                            <input type="file" {...register('image', { required: true })} className="file-input file-input-bordered w-full" />
+                            <input type="text" {...register('image', { required: true })} className="input input-bordered  w-full" />
                             {errors.image && <span className="text-rose-600 mt-1 ">Class image is required</span>}
                         </div>
 
