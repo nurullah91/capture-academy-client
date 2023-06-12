@@ -23,10 +23,10 @@ const Register = () => {
         // console.log(data);
         setBtnDisable(true);
         createUser(data.email, data.password)
-            .then(result => {
+            .then( () => {
                 reset();
                 setError("")
-                updateUser(data.name, data.photoURL)
+                updateUser(data.displayName, data.photoURL)
                     .then(() => {
                         const saveUser = { displayName: data.displayName, email: data.email, photoURL: data.photoURL, role: "Student" }
 
@@ -58,7 +58,6 @@ const Register = () => {
                         console.log(error)
                         setError(error.message)
                     })
-                console.log(result.user);
 
             })
             .catch(err => {

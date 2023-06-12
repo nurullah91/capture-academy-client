@@ -5,7 +5,6 @@ import { useState } from "react";
 const PopularInstructors = () => {
 
     const [instructors, setInstructors] = useState([]);
-    console.log(instructors);
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_BASE_URL}/instructors/popular`)
             .then(data => {
