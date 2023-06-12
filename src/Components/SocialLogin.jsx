@@ -1,13 +1,14 @@
 import { FcGoogle } from "react-icons/fc";
 import useAuth from "../Hooks/useAuth";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const SocialLogin = () => {
     const { googleSignIn } = useAuth();
     const [error, setError] = useState('')
     const navigate = useNavigate();
+    const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
 

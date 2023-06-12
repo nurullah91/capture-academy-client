@@ -9,6 +9,7 @@ import Classes from "../pages/Classes/Classes";
 import Instructors from "../pages/Instructors/instructors";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Error from "../pages/Error/Error";
+import PrivetRouts from "./PrivetRouts";
 
 
 
@@ -41,7 +42,7 @@ import Error from "../pages/Error/Error";
         },
         {
           path: 'dashboard',
-          element:<Dashboard></Dashboard>
+          element:<PrivetRouts><Dashboard></Dashboard></PrivetRouts>
         }
       ]
     },

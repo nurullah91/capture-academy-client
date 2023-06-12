@@ -18,7 +18,7 @@ const AuthProvider = ({ children }) => {
     // update a user profile
     const updateUser = (name, photoUrl) => {
         setLoading(true)
-      return  updateProfile(auth.currentUser, {
+        return updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: photoUrl
         })
@@ -38,31 +38,37 @@ const AuthProvider = ({ children }) => {
 
     // get user and user info
     useEffect(() => {
-        const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser)
-
-            if(currentUser){
-                axios.post(`${import.meta.env.VITE_BASE_URL}/jwt`, {email:currentUser.email})
-                .then(data=>{
-                    localStorage.setItem("secret-token", data.data.token)
-                    setLoading(false);
-                })
+        const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+            if (currentUser) {
+                axios.post(`${import.meta.env.VITE_BASE_URL}/jwt`, { email: currentUser.email })
+                    .then((data) => {
+                        localStorage.setItem('secret-token', data.data.token);
+                        setUser(currentUser);
+                        setLoading(false); // Set loading to false after setting the user and receiving the token
+                    })
+                    .catch((error) => {
+                        // Handle error if there's an issue with the API request
+                        console.error(error);
+                        setLoading(false); // Set loading to false even if there's an error
+                    });
+            } else {
+                localStorage.removeItem('secret-token');
+                setUser(null);
+                setLoading(false); // Set loading to false when there is no current user
             }
-
-            else{
-                localStorage.removeItem("secret-token")
-            }
-        })
+        });
 
         return () => {
             unSubscribe();
-        }
-    }, [])
+        };
+    }, []);
+
 
 
     // logOut function
-    const logOut = () =>{
-       return signOut(auth);
+    const logOut = () => {
+        setLoading(true)
+        return signOut(auth);
     }
     const authInfo = {
         loading,
