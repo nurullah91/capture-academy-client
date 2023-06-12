@@ -4,13 +4,14 @@ import { useEffect } from 'react';
 import Swal from 'sweetalert2';
 import useAuth from '../../../../Hooks/useAuth';
 import useSecuredAxios from '../../../../Hooks/useSecuredAxios';
+import { useNavigate } from 'react-router-dom';
 
 const CheckoutForm = ({ selectedClass, price }) => {
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useAuth();
     const [securedAxios] = useSecuredAxios();
-
+    const navigate = useNavigate();
     const [clientSecret, setClientSecret] = useState('');
     const [cardError, setCardError] = useState('');
     const [processing, setProcessing] = useState(false);
@@ -88,12 +89,14 @@ const CheckoutForm = ({ selectedClass, price }) => {
                     console.log(res.data);
                     if (res.data.insertedId) {
                         Swal.fire(
-                            'Good job!',
-                            'You clicked the button!',
+                            'Success!',
+                            'Payment successful!',
                             'success'
                         )
+                        navigate('/dashboard/my-enrolled-class')
                     }
                 })
+
 
         }
     }

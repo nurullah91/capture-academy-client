@@ -32,7 +32,7 @@ const ClassCard = ({ singleClass }) => {
                             confirmButtonText: 'Pay Now!'
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                navigate('/dashboard')
+                                navigate('/dashboard/my-selected-class')
                             }
                         })
 
