@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { FaUserCircle } from "react-icons/fa";
+import useAdmin from "../../../Hooks/useAdmin";
+import useInstructor from "../../../Hooks/useInstructor";
 
 const NavBar = () => {
     const { user, logOut } = useAuth();
-    console.log(user);
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
+
     const handleLogOut = () => {
         logOut()
             .then()
@@ -14,7 +18,11 @@ const NavBar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/instructors'>Instructors</Link></li>
         <li><Link to='/classes'>Classes</Link></li>
-        <li><Link to='/dashboard'>Dashboard</Link></li>
+        {
+           user && isAdmin?<li><Link to='/dashboard/admin-home'>Dashboard</Link></li>:
+           user && isInstructor?<li><Link to='/dashboard/instructor-home'>Dashboard</Link></li>:
+            <li><Link to='/dashboard/user-home'>Dashboard</Link></li>
+        }
 
     </>
     return (

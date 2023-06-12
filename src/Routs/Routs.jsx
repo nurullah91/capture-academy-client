@@ -12,6 +12,17 @@ import Error from "../pages/Error/Error";
 import PrivetRouts from "./PrivetRouts";
 import MySelectedClass from "../pages/Dashboard/Student/SelectedClass/MySelectedClass";
 import MyEnrolledClass from "../pages/Dashboard/Student/MyEnrolledClass/MyEnrolledClass";
+import ManageClasses from "../pages/Dashboard/Admin/ManageClasses/ManageClasses";
+import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
+import AddClass from "../pages/Dashboard/Instructor/AddClass/AddClass";
+import MyClasses from "../pages/Dashboard/Instructor/MyClasses/MyClasses";
+import TotalStudents from "../pages/Dashboard/Instructor/TotalStudents/TotalStudents";
+import Feedback from "../pages/Dashboard/Instructor/Feedback/Feedback";
+import AdminRouts from "./AdminRouts";
+import InstructorRouts from "./InstructorRouts";
+import StudentHome from "../pages/Dashboard/Student/StudentHome";
+import InstructorHome from "../pages/Dashboard/Instructor/InstructorHome";
+import AdminHome from "../pages/Dashboard/Admin/AdminHome";
 
 
 
@@ -50,13 +61,63 @@ const router = createBrowserRouter([
     element: <PrivetRouts><Dashboard></Dashboard></PrivetRouts>,
     children: [
       {
+        path: 'user-home',
+        element: <PrivetRouts><StudentHome></StudentHome></PrivetRouts>
+      },
+      {
         path: 'my-selected-class',
         element: <PrivetRouts><MySelectedClass></MySelectedClass></PrivetRouts>
       },
       {
         path: 'my-enrolled-class',
         element: <PrivetRouts><MyEnrolledClass></MyEnrolledClass></PrivetRouts>
-      }
+      },
+
+      // Admin routs
+      {
+        path: 'admin-home',
+        element:<AdminRouts><AdminHome></AdminHome></AdminRouts>
+      },
+      {
+        path: 'manage-classes',
+        element:<AdminRouts><ManageClasses></ManageClasses></AdminRouts>
+      },
+      {
+        path: 'manage-users',
+        element:<AdminRouts><ManageUsers></ManageUsers></AdminRouts>
+      },
+
+
+      // Instructor routs
+      {
+        path: 'instructor-home',
+        element:<InstructorRouts><InstructorHome></InstructorHome></InstructorRouts>
+      },
+      {
+        path: 'add-class',
+        element:<InstructorRouts><AddClass></AddClass></InstructorRouts>
+      },
+      {
+        path: 'my-class',
+        element:<InstructorRouts><MyClasses></MyClasses></InstructorRouts>
+      },
+      {
+        path: 'total-enrolled-students',
+        element:<InstructorRouts><TotalStudents></TotalStudents></InstructorRouts>
+      },
+      {
+        path: 'feedback',
+        element:<InstructorRouts><Feedback></Feedback></InstructorRouts>
+      },
+
+
+
+
+
+
+
+
+
     ]
 
   },

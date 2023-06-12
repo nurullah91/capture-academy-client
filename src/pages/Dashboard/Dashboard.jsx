@@ -2,7 +2,6 @@ import { Link, Outlet } from "react-router-dom";
 import useAdmin from "../../Hooks/useAdmin";
 import useAuth from "../../Hooks/useAuth";
 import useInstructor from "../../Hooks/useInstructor";
-import MySelectedClass from "./Student/SelectedClass/MySelectedClass";
 import NavBar from "../Shared/NavBar/NavBar";
 import Footer from "../Shared/Footer/Footer";
 
@@ -32,15 +31,15 @@ const Dashboard = () => {
                             {/* Sidebar content here */}
                             {user && isAdmin ? <>
 
-                                <li><Link to='/dashboard/my-selected-class'>Manage Classes</Link></li>
-                                <li><Link to='/dashboard/my-enrolled-class'>Manage Users</Link></li>
+                                <li><Link to='/dashboard/manage-classes'>Manage Classes</Link></li>
+                                <li><Link to='/dashboard/manage-users'>Manage Users</Link></li>
 
                             </> : user && isInstructor ? <>
 
-                                <li><Link to='/dashboard/my-selected-class'>Add a class</Link></li>
-                                <li><Link to='/dashboard/my-enrolled-class'>My classes</Link></li>
-                                <li><Link to='/dashboard/my-enrolled-class'>Total enrolled students</Link></li>
-                                <li><Link to='/dashboard/my-enrolled-class'>Feedback</Link></li>
+                                <li><Link to='/dashboard/add-class'>Add a class</Link></li>
+                                <li><Link to='/dashboard/my-classes'>My classes</Link></li>
+                                <li><Link to='/dashboard/total-enrolled-students'>Total enrolled students</Link></li>
+                                <li><Link to='/dashboard/feedback'>Feedback</Link></li>
 
                             </> :
 
