@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
-import { FaUser } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 
 const NavBar = () => {
     const { user, logOut } = useAuth();
@@ -44,15 +44,17 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div className="flex">
+                    <div className="flex items-center">
                         {user ? <>
-                            <img src={user.photoURL} alt="" />
+                            {user.photoURL?<img className="w-10 h-10 rounded-full mr-2" src={user.photoURL} alt="User Photo" title={user.displayName}/>:<FaUserCircle className="text-4xl mr-2"></FaUserCircle>}
                             <button onClick={handleLogOut} className="bg-rose-300 px-4 py-2 rounded-md font-bold shadow-md">LogOut</button>
 
                         </> : <>
-                        <FaUser></FaUser>
+                            <FaUserCircle className="text-4xl mr-2"></FaUserCircle>
                             <Link to='/login' className="bg-rose-300 px-4 py-2 rounded-md font-bold shadow-md">Login</Link>
-                        </>}
+                        </>
+
+                        }
                     </div>
                 </div>
             </div>

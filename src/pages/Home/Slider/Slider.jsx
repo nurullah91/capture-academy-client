@@ -24,7 +24,7 @@ const Slider = () => {
                 <img src="https://i.ibb.co/DQf41rm/camera-photographic-with-smartphone-devices-generative-ai.jpg" alt="" />
             </SwiperSlide>
             <SwiperSlide>
-                <img src="https://i.ibb.co/Xp4W6M7/camera-photographic-with-smartphone-devices-generative-ai-4.jpg" alt="" />
+                <img src="https://i.ibb.co/7NR938F/camera-photographic-with-smartphone-devices-generative-ai-8.jpg" alt="" />
             </SwiperSlide>
             <SwiperSlide>
                 <img src="https://i.ibb.co/XzXTm4S/camera-photographic-with-smartphone-devices-generative-ai-6.jpg" alt="" />
