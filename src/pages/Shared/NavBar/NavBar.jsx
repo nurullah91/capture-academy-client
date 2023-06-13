@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { FaUserCircle } from "react-icons/fa";
+import { BsFillSunFill } from "react-icons/bs";
+import { BsFillMoonStarsFill } from "react-icons/bs";
 import useAdmin from "../../../Hooks/useAdmin";
 import useInstructor from "../../../Hooks/useInstructor";
+import { useContext } from "react";
+import { ThemeContext } from "../../../Providers/ThemeProvider";
 
 const NavBar = () => {
     const { user, logOut } = useAuth();
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
-
+    const {isDarkMode, toggleTheme } = useContext(ThemeContext);
     const handleLogOut = () => {
         logOut()
             .then()
@@ -63,6 +67,10 @@ const NavBar = () => {
                         </>
 
                         }
+                        <button onClick={toggleTheme}>{
+isDarkMode?<BsFillMoonStarsFill></BsFillMoonStarsFill> : <BsFillSunFill></BsFillSunFill>
+
+                        }</button>
                     </div>
                 </div>
             </div>
