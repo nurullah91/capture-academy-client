@@ -14,7 +14,6 @@ const AddClass = () => {
 
     const onSubmit = (data) => {
         // creating a new empty form
-        console.log(data);
         data.price = parseFloat(data.price);
         data.totalSeats = parseFloat(data.totalSeats);
         data.enrolled = parseFloat(data.enrolled);
@@ -117,7 +116,7 @@ const AddClass = () => {
 
                     </div>
                     <div className="text-center">
-                        <input className="bg-cyan-400 px-4 py-2 rounded-md font-bold mt-5" type="submit" value='Add class' />
+                        <input className="bg-cyan-400 px-4 py-2 rounded-md font-bold my-5" type="submit" value='Add class' />
                     </div>
 
                 </form>
