@@ -102,7 +102,7 @@ const ManageClasses = () => {
 
             <div>
                 <div className="overflow-x-auto">
-                    <table className="table">
+                    <table className="table table-xs">
                         {/* head */}
                         <thead>
                             <tr>
@@ -136,7 +136,7 @@ const ManageClasses = () => {
                                     <td><button onClick={() => handleDelete(item)} className="bg-rose-600 p-3 text-2xl rounded-md text-white"><FaTrash></FaTrash></button></td>
 
                                     <th>
-                                        <Link to='/dashboard/manage-class/feedback'> <button className="btn bg-cyan-500" disabled={item.status !== "denied"}>Feedback</button></Link>
+                                        <Link to={`/dashboard/manage-class/feedback/${item._id}`}> <button className="btn btn-xs lg:btn-sm bg-cyan-500" disabled={item.status !== "denied"}>Feedback</button></Link>
                                     </th>
                                 </tr>)
                             }

@@ -71,7 +71,7 @@ const MyClasses = () => {
                                     <td>{item.name}</td>
                                     <td className="text-right">$ {item.price}</td>
                                     <td className="text-center">{item.enrolled}</td>
-                                    <td><span className='bg-cyan-200 p-2 font-semibold rounded-md '>{item.status}</span></td>
+                                    <td><span className=" bg-cyan-200 p-2 font-semibold rounded-md">{item.status}</span></td>
                                     <th>
                                         <Link to={`/dashboard/my-class/update/${item._id}`}> <button><FiEdit className="text-3xl"></FiEdit></button></Link>
                                     </th>

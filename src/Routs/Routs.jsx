@@ -25,6 +25,7 @@ import InstructorHome from "../pages/Dashboard/Instructor/InstructorHome";
 import AdminHome from "../pages/Dashboard/Admin/AdminHome";
 import Payment from "../pages/Dashboard/Student/SelectedClass/Payment";
 import UpdateClass from "../pages/Dashboard/Instructor/MyClasses/UpdateClass";
+import AddFeedback from "../pages/Dashboard/Admin/ManageClasses/AddFeedback";
 
 
 
@@ -88,6 +89,11 @@ const router = createBrowserRouter([
         path: 'manage-classes',
         element:<AdminRouts><ManageClasses></ManageClasses></AdminRouts>
       },
+      {
+        path: 'manage-class/feedback/:id',
+        element:<AdminRouts><AddFeedback></AddFeedback></AdminRouts>
+      },
+
       {
         path: 'manage-users',
         element:<AdminRouts><ManageUsers></ManageUsers></AdminRouts>

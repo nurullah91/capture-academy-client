@@ -6,7 +6,7 @@ SwiperCore.use([Autoplay]);
 
 const Slider = () => {
     return (
-      <div className="mt-24">
+      <div className="">
           <Swiper
             spaceBetween={30}
             centeredSlides={true}
