@@ -79,8 +79,8 @@ const UserRow = ({ user, index }) => {
       <td>{displayName}</td>
       <td>{email}</td>
       <td>{role}</td>
-      <td><button disabled={adminDisable} onClick={() => handleMakeAdmin(_id)} className="bg-cyan-400 px-4 py-2 rounded-md">Make Admin</button></td>
-      <td><button disabled={instructorDisable} onClick={() => handleMakeInstructor(_id)} className="bg-cyan-400 px-4 py-2 rounded-md">Make Instructor</button></td>
+      <td><button disabled={adminDisable || role === 'admin'} onClick={() => handleMakeAdmin(_id)} className=" btn bg-cyan-400 px-4 py-2 rounded-md">Make Admin</button></td>
+      <td><button disabled={instructorDisable || role === 'Instructor'} onClick={() => handleMakeInstructor(_id)} className=" btn bg-cyan-400 px-4 py-2 rounded-md">Make Instructor</button></td>
 
     </tr>
 

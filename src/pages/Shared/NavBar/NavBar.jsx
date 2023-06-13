@@ -63,11 +63,11 @@ const NavBar = () => {
 
                         </> : <>
                             <FaUserCircle className="text-4xl mr-2"></FaUserCircle>
-                            <Link to='/login' className="bg-rose-300 px-4 py-2 rounded-md font-bold shadow-md">Login</Link>
+                            <Link to='/login' className="bg-rose-300 px-4 py-2 rounded-md font-bold shadow-md ">Login</Link>
                         </>
 
                         }
-                        <button onClick={toggleTheme}>{
+                        <button className="mx-3" onClick={toggleTheme}>{
 isDarkMode?<BsFillMoonStarsFill></BsFillMoonStarsFill> : <BsFillSunFill></BsFillSunFill>
 
                         }</button>

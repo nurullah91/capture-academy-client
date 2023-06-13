@@ -4,6 +4,8 @@ import useAuth from "../../Hooks/useAuth";
 import useInstructor from "../../Hooks/useInstructor";
 import NavBar from "../Shared/NavBar/NavBar";
 import Footer from "../Shared/Footer/Footer";
+import { useContext } from "react";
+import { ThemeContext } from "../../Providers/ThemeProvider";
 
 const Dashboard = () => {
 
@@ -11,12 +13,14 @@ const Dashboard = () => {
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
 
+    const {theme} = useContext(ThemeContext);
 
+    const CAtheme = localStorage.getItem("CAtheme")
 
     return (
-        <div>
+        <div data-theme={CAtheme}>
             <NavBar></NavBar>
-            <div className="lg:mt-16 mt-20">
+            <div className="lg:pt-16 pt-20">
                 <div className="drawer lg:drawer-open">
                     <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                     <div className="drawer-content">
