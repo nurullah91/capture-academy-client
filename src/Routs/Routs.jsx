@@ -24,6 +24,7 @@ import StudentHome from "../pages/Dashboard/Student/StudentHome";
 import InstructorHome from "../pages/Dashboard/Instructor/InstructorHome";
 import AdminHome from "../pages/Dashboard/Admin/AdminHome";
 import Payment from "../pages/Dashboard/Student/SelectedClass/Payment";
+import UpdateClass from "../pages/Dashboard/Instructor/MyClasses/UpdateClass";
 
 
 
@@ -103,8 +104,13 @@ const router = createBrowserRouter([
         element:<InstructorRouts><AddClass></AddClass></InstructorRouts>
       },
       {
-        path: 'my-class',
+        path: 'my-classes',
         element:<InstructorRouts><MyClasses></MyClasses></InstructorRouts>
+      },
+      {
+        path:'my-class/update/:id',
+        element:<InstructorRouts><UpdateClass></UpdateClass></InstructorRouts>,
+        loader: ({params})=>fetch(`${import.meta.env.VITE_BASE_URL}/update-class/${params.id}`)
       },
       {
         path: 'total-enrolled-students',
