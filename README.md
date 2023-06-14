@@ -6,6 +6,10 @@
 
 ### Here user can create an account and sign in or Login with their created accounts email and password.
 
+![WELCOME IMAGE](https://i.ibb.co/DQf41rm/camera-photographic-with-smartphone-devices-generative-ai.jpg)
+
+
+
 ### User can Sign in with their Google account.
 
 ### User can Enroll and Pay any class which classes have available seat.
