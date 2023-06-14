@@ -7,6 +7,16 @@ import Footer from "../Shared/Footer/Footer";
 import { useContext } from "react";
 import { ThemeContext } from "../../Providers/ThemeProvider";
 import { NavLink, Outlet } from "react-router-dom";
+import { SiGoogleclassroom } from 'react-icons/si';
+import { FcPaid } from 'react-icons/fc';
+import { MdNoteAdd } from 'react-icons/md';
+import { MdFeedback } from 'react-icons/md';
+import { FaChalkboardTeacher, FaUsers } from 'react-icons/fa';
+
+
+// admin@admin.com
+// Admin@123
+
 
 const Dashboard = () => {
 
@@ -40,28 +50,28 @@ const Dashboard = () => {
                             {user && isAdmin ? <>
 
                                 <li><NavLink className={({ isActive }) =>
-                                    isActive ? "bg-cyan-100" : ""} to='/dashboard/manage-classes'>Manage Classes</NavLink></li>
+                                    isActive ? "bg-cyan-100" : ""} to='/dashboard/manage-classes'>Manage Classes  <SiGoogleclassroom className="text-2xl"></SiGoogleclassroom></NavLink></li>
                                 <li><NavLink className={({ isActive }) =>
-                                    isActive ? "bg-cyan-100" : ""} to='/dashboard/manage-users'>Manage Users</NavLink></li>
+                                    isActive ? "bg-cyan-100" : ""} to='/dashboard/manage-users'>Manage Users <FaUsers className="text-2xl"></FaUsers></NavLink></li>
 
                             </> : user && isInstructor ? <>
 
                                 <li><NavLink className={({ isActive }) =>
-                                    isActive ? "bg-cyan-100" : ""} to='/dashboard/add-class'>Add a class</NavLink></li>
+                                    isActive ? "bg-cyan-100" : ""} to='/dashboard/add-class'>Add a class <MdNoteAdd className="text-2xl"></MdNoteAdd></NavLink></li>
                                 <li><NavLink className={({ isActive }) =>
-                                    isActive ? "bg-cyan-100" : ""} to='/dashboard/my-classes'>My classes</NavLink></li>
+                                    isActive ? "bg-cyan-100" : ""} to='/dashboard/my-classes'>My classes <SiGoogleclassroom className="text-2xl"></SiGoogleclassroom></NavLink></li>
                                 <li><NavLink className={({ isActive }) =>
-                                    isActive ? "bg-cyan-100" : ""} to='/dashboard/total-enrolled-students'>Total enrolled students</NavLink></li>
+                                    isActive ? "bg-cyan-100" : ""} to='/dashboard/total-enrolled-students'>Total enrolled students <FaChalkboardTeacher className="text-2xl"></FaChalkboardTeacher></NavLink></li>
                                 <li><NavLink className={({ isActive }) =>
-                                    isActive ? "bg-cyan-100" : ""} to='/dashboard/feedback'>Feedback</NavLink></li>
+                                    isActive ? "bg-cyan-100" : ""} to='/dashboard/feedback'>Feedback <MdFeedback className="text-2xl"></MdFeedback></NavLink></li>
 
                             </> :
 
                                 <>
                                     <li><NavLink className={({ isActive }) =>
-                                        isActive ? "bg-cyan-100" : ""} to='/dashboard/my-selected-class'>My Selected Class</NavLink></li>
+                                        isActive ? "bg-cyan-100" : ""} to='/dashboard/my-selected-class'>My Selected Class <SiGoogleclassroom className="text-2xl"></SiGoogleclassroom></NavLink></li>
                                     <li><NavLink className={({ isActive }) =>
-                                        isActive ? "bg-cyan-100" : ""} to='/dashboard/my-enrolled-class'>My Enrolled Class</NavLink></li>
+                                        isActive ? "bg-cyan-100" : ""} to='/dashboard/my-enrolled-class'>My Enrolled Class <FcPaid className="text-2xl"></FcPaid></NavLink></li>
                                 </>
                             }
                         </ul>

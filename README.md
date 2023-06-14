@@ -25,4 +25,4 @@
 
 
 
-## live site: https://capture-academy-340cf.web.app/classes
+## live site: https://capture-academy-340cf.web.app
