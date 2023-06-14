@@ -1,3 +1,4 @@
+![Welcome image](https://i.ibb.co/gWk7nBN/Black-Yellow-White-Modern-Studio-Photo-Logo-1-removebg-preview-1.png)
 # Welcome to Capture Academy
 
 ### This is a summer camp academic website. 
@@ -6,7 +7,6 @@
 
 ### Here user can create an account and sign in or Login with their created accounts email and password.
 
-![WELCOME IMAGE](https://i.ibb.co/DQf41rm/camera-photographic-with-smartphone-devices-generative-ai.jpg)
 
 
 
