@@ -86,15 +86,6 @@ const CheckoutForm = ({ selectedClass, price }) => {
                 className: selectedClass.map(item => item.name)
             }
 
-
-            // delete class from my selected class
-            const paidIds = selectedClass.map(item => item._id);
-            securedAxios.delete('/paid-class', {data: {paidIds}})
-                .then(res => {
-                    console.log(res.data);
-                })
-
-
             securedAxios.post('/payment', payment)
                 .then(res => {
                     console.log(res.data);
