@@ -56,7 +56,7 @@ const ClassCard = ({ singleClass }) => {
     }
 
     return (
-        <div>
+        <div  data-aos="flip-left">
             <div className={`card ${singleClass.availableSeats === 0 ? "bg-rose-300" : "bg-slate-100"} shadow-xl`}>
 
                 <figure><img src={singleClass.image} alt="Class Image" /></figure>

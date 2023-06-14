@@ -2,14 +2,15 @@
 import useClasses from "../../Hooks/useClasses";
 import ClassCard from "./ClassCard";
 
-
 const Classes = () => {
+
 
   const [classes] = useClasses();
   const approvedClasses = classes.filter((classItem) => classItem.status === 'approved');
 
   return (
-    <div className="my-24">
+   <div className="overflow-hidden">
+     <div data-aos="zoom-in-up" className="my-24">
       <h2 className="text-4xl my-5 font-bold text-center">Available Total Classes: {approvedClasses.length}</h2>
 
 
@@ -17,10 +18,11 @@ const Classes = () => {
 
         {/* show every single card */}
         {
-          approvedClasses.map(singleClass => <ClassCard key={singleClass._id} singleClass={singleClass}></ClassCard>)
+          approvedClasses.map(singleClass => <ClassCard  key={singleClass._id} singleClass={singleClass}></ClassCard>)
         }
       </div>
     </div>
+   </div>
   );
 };
 
