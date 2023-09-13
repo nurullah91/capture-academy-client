@@ -6,6 +6,8 @@ import { useContext } from 'react';
 import { ThemeContext } from '../../../Providers/ThemeProvider';
 
 const Main = () => {
+    // import theme for dark mood light mood
+    // eslint-disable-next-line no-unused-vars
     const {theme} = useContext(ThemeContext);
 
     const CAtheme = localStorage.getItem("CAtheme")

@@ -24,6 +24,8 @@ const Dashboard = () => {
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
 
+    // import theme. don not remove it
+    // eslint-disable-next-line no-unused-vars
     const { theme } = useContext(ThemeContext);
 
     const CAtheme = localStorage.getItem("CAtheme")
