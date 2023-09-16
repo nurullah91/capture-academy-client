@@ -1,0 +1,32 @@
+
+/* swiper js css */
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    font-size: 18px;
+    padding-top: 40px;
+    padding-bottom: 70px;
+    
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  /* custom style */
+  .testimonial-bg{
+    background: linear-gradient(to bottom right, rgba(52, 80, 190, 0.703), rgb(3, 31, 143)), url(https://i.ibb.co/WD0WHCh/testimonial-bg.jpg);
+    background-blend-mode: multiply;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding:  100px 0px;
+  }

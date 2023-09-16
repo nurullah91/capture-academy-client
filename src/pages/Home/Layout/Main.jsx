@@ -14,7 +14,7 @@ const Main = () => {
     return (
         <div data-theme={CAtheme}>
             <NavBar></NavBar>
-            <div className='pt-24 w-11/12 lg:w-9/12 mx-auto min-h-[calc(100vh-68px)]'>
+            <div className="min-h-[calc(100vh-68px)]">
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>

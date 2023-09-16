@@ -17,7 +17,7 @@ const Slider = () => {
                 pagination={{
                     clickable: true,
                 }}
-                navigation={true}
+                navigation={false}
                 className="mySwiper"
             >
                 <SwiperSlide>
