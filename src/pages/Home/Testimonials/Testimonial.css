@@ -6,8 +6,6 @@
   }
   .swiper-slide {
     font-size: 18px;
-    padding-top: 40px;
-    padding-bottom: 70px;
     
     /* Center slide text vertically */
     display: flex;
@@ -29,4 +27,13 @@
     background-size: cover;
 
     padding:  100px 0px;
+  }
+
+
+  /* launch date section style */
+  .launch-sec{
+    background: linear-gradient(to bottom right, rgba(88, 109, 191, 0.606), rgba(63, 84, 166, 0.637)), url(https://i.ibb.co/SdvQJMd/pexels-emma-bauso-2253879-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }

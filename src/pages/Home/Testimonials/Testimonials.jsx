@@ -44,7 +44,7 @@ const Testimonials = () => {
                     >
                         {
                             testimonials.map(item =>
-                                <SwiperSlide key={item._id}>
+                                <SwiperSlide className="pt-[40px] pb-[70px]" key={item._id}>
                                     <div className="w-3/4  p-6 text-white relative bg-blue-900 bg-opacity-80 rounded-md">
                                         <h1 className="text-9xl absolute -top-12 -left-3 text-blue-300">&#10077;</h1>
                                         <p className="pb-16 pt-5">{item.testimonial}</p>

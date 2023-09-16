@@ -4,8 +4,8 @@ import './Message.css'
 
 const Message = () => {
     return (
-        <div className=' pt-8'>
-            <div className="featured-item bg-fixed text-white mb-20 mt-10">
+        <div className=''>
+            <div className="featured-item bg-fixed text-white mb-12">
 
                 <div className="bg-blue-900 bg-opacity-60 pb-20 pt-12">
                     <h2 className='text-4xl  font-bold text-center mb-10'>A message form CEO</h2>

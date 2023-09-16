@@ -4,6 +4,7 @@ import PopularClasses from "../PopularClasses/PopularClasses";
 import PopularInstructors from "../PopularInstructors/PopularInstructors";
 import Message from "../Message/Message";
 import Testimonials from "../Testimonials/Testimonials";
+import Launch from "../Launch/Launch";
 
 const Home = () => {
     return (
@@ -13,8 +14,9 @@ const Home = () => {
             </Helmet>
             <Slider></Slider>
             <PopularClasses></PopularClasses>
-            <PopularInstructors></PopularInstructors>
             <Testimonials></Testimonials>
+            <PopularInstructors></PopularInstructors>
+            <Launch></Launch>
             <Message></Message>
          
         </div>

@@ -26,7 +26,7 @@ const PopularInstructors = () => {
         <Container>
             <div className=' overflow-hidden'>
                 <h2 className="text-4xl font-bold my-10 text-center">Our Popular Instructors</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12">
                     {
                         instructors.map(instructor => <div data-aos="fade-left" key={instructor._id} className="card bg-slate-100 shadow-xl">
                             <figure><img src={instructor.photoURL} alt="Shoes" /></figure>
