@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.min.css';
 import SwiperCore, { Autoplay } from 'swiper';
+import { Link } from 'react-router-dom';
 
 SwiperCore.use([Autoplay]);
 
@@ -23,10 +24,16 @@ const Slider = () => {
                 <SwiperSlide>
                     <div className='relative'>
 
-                        <img src="https://i.ibb.co/DQf41rm/camera-photographic-with-smartphone-devices-generative-ai.jpg" alt="" />
+                        <img src="https://i.ibb.co/8PrMWJB/slider1.jpg" alt="slider image" />
 
-                        <div className='absolute top-0 left-0 bg-black bg-opacity-60 h-full w-full flex space-y-5  flex-col items-center'>
-                            <h2 className='text-3xl font-bold my-auto text-rose-500 p-4'>Capture Life&apos;s Beauty: Learn Photography Today!</h2>
+                        <div className='absolute top-0 left-0 bg-gradient-to-r from-[#0259eed5] via-[#055eeecb] to-transparent h-full w-full flex items-center pl-10'>
+
+                            <div className='w-full'>
+                                <h2 data-aos="fade-right" className='text-3xl lg:text-5xl font-semibold my-auto text-white w-3/4 md:w-1/2 mb-5 md:mb-2'>Capture Life&apos;s Beauty</h2>
+                                <p data-aos="fade-left" className='w-3/4 text-blue-50 mb-5 hidden md:block'>Join Capture Academy this summer to elevate your photography skills through expert guidance and hands-on learning.</p>
+
+                                <Link className='text-white border px-4 py-2 rounded' to="/classes">Get started</Link>
+                            </div>
 
                         </div>
                     </div>
@@ -35,41 +42,65 @@ const Slider = () => {
 
                 <SwiperSlide>
                     <div className='relative'>
-                        <img src="https://i.ibb.co/7NR938F/camera-photographic-with-smartphone-devices-generative-ai-8.jpg" alt="" />
+                        <img src="https://i.ibb.co/0Xvz639/slider2.jpg" alt="slider image" />
 
-                        <div className='absolute top-0 left-0 bg-black bg-opacity-60 h-full w-full flex space-y-5  flex-col items-center'>
-                            <h2 className='text-3xl font-bold my-auto text-rose-500 p-4'>Master the Art of Visual Storytelling: Enroll in Our Photography Courses</h2>
+                        <div className='absolute top-0 left-0 bg-gradient-to-r from-[#0259eed5] via-[#055eeecb] to-transparent h-full w-full flex items-center pl-10'>
 
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className='relative'>
-                        <img src="https://i.ibb.co/XzXTm4S/camera-photographic-with-smartphone-devices-generative-ai-6.jpg" alt="" />
+                            <div className='w-full'>
+                                <h2 data-aos="fade-right" className='text-3xl lg:text-5xl font-semibold my-auto text-white w-3/4 md:w-1/2 mb-5 md:mb-2'>Summer Camp for Young Shutterbugs</h2>
+                                <p data-aos="fade-left" className='w-3/4 text-blue-50 mb-5 hidden md:block'>Capture Academy offers a magical summer camp for young shutterbugs, combining creativity and adventure through photography.</p>
 
-                        <div className='absolute top-0 left-0 bg-black bg-opacity-60 h-full w-full flex space-y-5  flex-col items-center'>
-                            <h2 className='text-3xl font-bold my-auto text-rose-500 p-4'>Unleash Your Creativity: Join Our Photography Community</h2>
+                                <Link className='text-white border px-4 py-2 rounded' to="/classes">Get started</Link>
+                            </div>
 
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='relative'>
+                        <img src="https://i.ibb.co/6YrgMxt/slider3.jpg" alt="slider image" />
 
-                        <img src="https://i.ibb.co/MScvnjg/camera-photographic-with-smartphone-devices-generative-ai-1.jpg" alt="" />
+                        <div className='absolute top-0 left-0 bg-gradient-to-r from-[#0259eed5] via-[#055eeecb] to-transparent h-full w-full flex items-center pl-10'>
 
-                        <div className='absolute top-0 left-0 bg-black bg-opacity-60 h-full w-full flex space-y-5  flex-col items-center'>
-                            <h2 className='text-3xl font-bold my-auto text-rose-500 p-4'>From Beginner to Pro: Elevate Your Photography Skills with Us</h2>
+                            <div className='w-full'>
+                                <h2 data-aos="fade-right" className='text-3xl lg:text-5xl font-semibold my-auto text-white w-3/4 md:w-1/2 mb-5 md:mb-2'>Framing Memories, One Click at a Time</h2>
+                                <p data-aos="fade-left" className='w-3/4 text-blue-50 mb-5 hidden md:block'>Capture Academy is where art and technology converge, allowing you to frame memories one click at a time.</p>
+
+                                <Link className='text-white border px-4 py-2 rounded' to="/classes">Get started</Link>
+                            </div>
 
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='relative'>
-                        <img src="https://i.ibb.co/jzHbghF/camera-photographic-with-smartphone-devices-generative-ai.jpg" alt="" />
 
-                        <div className='absolute top-0 left-0 bg-black bg-opacity-60 h-full w-full flex space-y-5  flex-col items-center'>
-                            <h2 className='text-3xl font-bold my-auto text-rose-500  p-4'> Enroll now and embark on a visual adventure</h2>
+                        <img src="https://i.ibb.co/QrStyWf/slider4.jpg" alt="slider image" />
+
+                        <div className='absolute top-0 left-0 bg-gradient-to-r from-[#0259eed5] via-[#055eeecb] to-transparent h-full w-full flex items-center pl-10'>
+
+                            <div className='w-full'>
+                                <h2 data-aos="fade-right" className='text-3xl lg:text-5xl font-semibold my-auto text-white w-3/4 md:w-1/2  mb-5 md:mb-2'>Summer Camp for Future Photographers</h2>
+                                <p data-aos="fade-left" className='w-3/4 text-blue-50 mb-5 hidden md:block'>Capture Academy is the place where young talents evolve into future photographers, nurturing skills and creativity for a bright future.</p>
+
+                                <Link className='text-white border px-4 py-2 rounded' to="/classes">Get started</Link>
+                            </div>
+
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='relative'>
+                        <img src="https://i.ibb.co/1Z29qCv/slider5.jpg" alt="slider image" />
+
+                        <div className='absolute top-0 left-0 bg-gradient-to-r from-[#0259eed5] via-[#055eeecb] to-transparent h-full w-full flex items-center pl-10'>
+
+                            <div className='w-full'>
+                                <h2 data-aos="fade-right" className='text-3xl lg:text-5xl font-semibold my-auto text-white w-3/4 md:w-1/2 mb-5 md:mb-2'>Discover Your Photographic Passion with Capture Academy</h2>
+                                <p data-aos="fade-left" className='w-3/4 text-blue-50 mb-5 hidden md:block'>Experience the joy of snapping, learning, and having fun at Capture Academy&apos;s photography-centered summer activities.</p>
+
+                                <Link className='text-white border px-4 py-2 rounded' to="/classes">Get started</Link>
+                            </div>
 
                         </div>
                     </div>
