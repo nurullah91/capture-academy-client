@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import Container from '../../../Components/Container';
+import InstructorCard from './InstructorCard';
 
 const PopularInstructors = () => {
 
@@ -27,15 +28,12 @@ const PopularInstructors = () => {
             <div className=' overflow-hidden'>
                 <h2 className="text-4xl font-bold my-10 text-center">Our Popular Instructors</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12">
+
+
                     {
-                        instructors.map(instructor => <div data-aos="fade-left" key={instructor._id} className="card bg-slate-100 shadow-xl">
-                            <figure><img src={instructor.photoURL} alt="Shoes" /></figure>
-                            <div className="card-body">
-                                <h2 className="card-title">Name: {instructor.displayName}</h2>
-                                <h2 className="card-title">Email: {instructor.email}</h2>
-                            </div>
-                        </div>)
+                        instructors.map(instructor => <InstructorCard key={instructor._id} instructor={instructor}/>)
                     }
+                    
                 </div>
             </div>
         </Container>
