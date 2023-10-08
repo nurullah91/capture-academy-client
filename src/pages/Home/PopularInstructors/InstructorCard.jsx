@@ -10,7 +10,7 @@ const InstructorCard = ({ instructor }) => {
                 <div className="absolute backface-hidden w-full h-full shadow-md rounded">
                     <img src={instructor.photoURL} alt="Instructor image" className="w-full h-full rounded" />
                 </div>
-                <div className="p-5 absolute backface-hidden my-rotate-y-180 w-full h-full bg-blue-100 shadow-md rounded flex flex-col items-center justify-center">
+                <div className="p-5 absolute backface-hidden my-rotate-y-180 w-full h-full bg-blue-300 shadow-md rounded flex flex-col items-center justify-center">
 
                     <h3 className="text-3xl font-bold">{instructor.displayName}</h3>
                     <h4 className="text-xl flex items-center bg-slate-300  py-3 px-5 mt-5 w-full"><FaEnvelope className='mr-4' /> {instructor.email}</h4>
