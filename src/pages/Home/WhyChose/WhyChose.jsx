@@ -29,7 +29,7 @@ const WhyChose = () => {
                         initial={{ scale: 1, x: 0 }}
                         whileHover={{
                             scale: 1.2,
-                            x: '50px',
+                            x: '-50px',
                             zIndex:100
                         }}
                         transition={{
@@ -63,7 +63,7 @@ const WhyChose = () => {
                         initial={{ scale: 1, x: 0 }}
                         whileHover={{
                             scale: 1.2,
-                            x: '50px',
+                            x: '-50px',
                             zIndex:100
                         }}
                         transition={{
@@ -97,7 +97,7 @@ const WhyChose = () => {
                         initial={{ scale: 1, x: 0 }}
                         whileHover={{
                             scale: 1.2,
-                            x: '50px',
+                            x: '-50px',
                             zIndex:100
                         }}
                         transition={{

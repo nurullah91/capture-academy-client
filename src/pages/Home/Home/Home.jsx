@@ -7,6 +7,8 @@ import Testimonials from "../Testimonials/Testimonials";
 import Launch from "../Launch/Launch";
 import WeAre from "../WeAre/WeAre";
 import WhyChose from "../WhyChose/WhyChose";
+import PhotoGallery from "../PhotoGallery/PhotoGallery";
+import Award from "../Award/Award";
 
 const Home = () => {
     return (
@@ -20,7 +22,9 @@ const Home = () => {
             <Testimonials></Testimonials>
             <PopularInstructors></PopularInstructors>
             <WhyChose></WhyChose>
+            <Award></Award>
             <Launch></Launch>
+            <PhotoGallery></PhotoGallery>
             <Message></Message>
          
         </div>
