@@ -5,6 +5,7 @@ import PopularInstructors from "../PopularInstructors/PopularInstructors";
 import Message from "../Message/Message";
 import Testimonials from "../Testimonials/Testimonials";
 import Launch from "../Launch/Launch";
+import WeAre from "../WeAre/WeAre";
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
                 <title>Capture Academy | Home</title>
             </Helmet>
             <Slider></Slider>
+            <WeAre></WeAre>
             <PopularClasses></PopularClasses>
             <Testimonials></Testimonials>
             <PopularInstructors></PopularInstructors>
