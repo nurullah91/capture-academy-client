@@ -25,19 +25,19 @@ const PhotoGallery = () => {
 
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     <motion.div
-                        initial={{ y: '-5px' }}
+                        initial={{ y: '-10px' }}
                         whileHover={{boxShadow: "0px 0px 20px rgb(255 255 255)"}}
                         animate={{ y: '5px' }}
                         transition={{ type: 'spring', repeatType: "reverse", stiffness: 20, repeat: Infinity }}
                         className="row-span-2 col-span-2 flex items-center justify-center"><img className="w-full h-3/4" src={gallery} alt="gallery image" /></motion.div>
-                    <motion.di
+                    <motion.div
                        initial={{ y:'-5px' }}
                        animate={{ y:'5px' }}
                        whileHover={{boxShadow: "0px 0px 20px rgb(255 255 255)"}}
                        transition={{type:'spring', repeatType: "reverse", stiffness:20, repeat: Infinity }}
-                        className="row-span-2"><img className="w-full h-full" src={gallery4} alt="gallery image" /></motion.di>
+                        className="row-span-2"><img className="w-full h-full" src={gallery4} alt="gallery image" /></motion.div>
                     <motion.div
-                       initial={{ y:'-5px' }}
+                       initial={{ y:'-10px' }}
                        animate={{ y:'5px' }}
                        whileHover={{boxShadow: "0px 0px 20px rgb(255 255 255)"}}
                        transition={{type:'spring', repeatType: "reverse", stiffness:20, repeat: Infinity }}

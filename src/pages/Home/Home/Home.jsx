@@ -9,6 +9,8 @@ import WeAre from "../WeAre/WeAre";
 import WhyChose from "../WhyChose/WhyChose";
 import PhotoGallery from "../PhotoGallery/PhotoGallery";
 import Award from "../Award/Award";
+import Location from "../Location/Location";
+import Sponsor from "../Sponsor/Sponsor";
 
 const Home = () => {
     return (
@@ -26,6 +28,8 @@ const Home = () => {
             <Launch></Launch>
             <PhotoGallery></PhotoGallery>
             <Message></Message>
+            <Sponsor></Sponsor>
+            <Location></Location>
          
         </div>
     );

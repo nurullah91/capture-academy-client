@@ -1,6 +1,6 @@
 
 const PopularClassCard = ({ popularClass }) => {
-    console.log(popularClass);
+   
     return (
         <div className="group relative items-center justify-center overflow-hidden cursor-pointer">
             <div className="">

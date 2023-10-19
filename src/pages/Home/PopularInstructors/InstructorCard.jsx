@@ -2,7 +2,7 @@ import { FaEnvelope } from 'react-icons/fa';
 
 
 const InstructorCard = ({ instructor }) => {
-    console.log(instructor);
+   
 
     return (
         <div className="w-full h-[300px] bg-transparent group perspective">
