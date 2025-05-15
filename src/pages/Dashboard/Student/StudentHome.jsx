@@ -1,17 +1,19 @@
 import useAuth from "../../../Hooks/useAuth";
-import welcome from '../../../../public/welcome.json';
+import welcome from "../../../assets/welcome.json";
 import Lottie from "lottie-react";
 
 const StudentHome = () => {
-    const {user} = useAuth();
-    return (
-        <div className="mt-10">
-             <h2 className="text-5xl font-bold text-cyan-700 text-center">Welcome {user?.displayName}</h2>
-             <div>
-            <Lottie className='h-[70vh]' animationData={welcome} loop={true} />;
-            </div>
-        </div>
-    );
+  const { user } = useAuth();
+  return (
+    <div className="mt-10">
+      <h2 className="text-5xl font-bold text-cyan-700 text-center">
+        Welcome {user?.displayName}
+      </h2>
+      <div>
+        <Lottie className="h-[70vh]" animationData={welcome} loop={true} />;
+      </div>
+    </div>
+  );
 };
 
 export default StudentHome;
